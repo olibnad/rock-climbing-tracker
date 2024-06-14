@@ -43,3 +43,11 @@ button {
 button:hover {
     background: #4cae4c;
 }
+
+/* Add this to the existing CSS file */
+.climb-entry {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+}
