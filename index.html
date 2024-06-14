@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Climbing Tracker</title>
+    <title>Rock Climbing Tracker - Add Climb</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Rock Climbing Tracker</h1>
-        <form id="climbForm">
+        <header>
+            <h1>Add a New Climb</h1>
+        </header>
+        <nav>
+            <button onclick="location.href='history.html'">View History</button>
+        </nav>
+        <form id="add-climb-form">
+            <!-- Form fields go here -->
             <label for="level">Level of Climb:</label>
             <input type="text" id="level" name="level" required>
 
@@ -19,31 +25,21 @@
             <label for="date">Date:</label>
             <input type="date" id="date" name="date" required>
 
-            <label for="type">Type of Wall:</label>
-            <select id="type" name="type" required>
+            <label for="wall-type">Type of Wall:</label>
+            <select id="wall-type" name="wall-type" required>
                 <option value="slab">Slab</option>
                 <option value="light-overhang">Light Overhang</option>
                 <option value="deep-overhang">Deep Overhang</option>
             </select>
 
-            <label>Types of Holds:</label>
-            <div>
-                <input type="checkbox" id="crimps" name="holds" value="crimps">
-                <label for="crimps">Crimps</label>
-            </div>
-            <div>
-                <input type="checkbox" id="jugs" name="holds" value="jugs">
-                <label for="jugs">Jugs</label>
-            </div>
-            <div>
-                <input type="checkbox" id="slopers" name="holds" value="slopers">
-                <label for="slopers">Slopers</label>
-            </div>
-            <!-- Add more holds as needed -->
+            <label for="holds">Types of Holds:</label>
+            <input type="checkbox" id="hold1" name="holds" value="crimp"> Crimp
+            <input type="checkbox" id="hold2" name="holds" value="jug"> Jug
+            <input type="checkbox" id="hold3" name="holds" value="pinch"> Pinch
+            <input type="checkbox" id="hold4" name="holds" value="sloper"> Sloper
 
             <button type="submit">Add Climb</button>
         </form>
-        <div id="message"></div>
     </div>
     <script src="../js/scripts.js"></script>
 </body>

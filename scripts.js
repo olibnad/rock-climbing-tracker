@@ -1,29 +1,29 @@
-document.getElementById('climbForm').addEventListener('submit', function(event) {
+document.getElementById('add-climb-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
+    // Gather form data
     const level = document.getElementById('level').value;
     const location = document.getElementById('location').value;
     const date = document.getElementById('date').value;
-    const type = document.getElementById('type').value;
+    const wallType = document.getElementById('wall-type').value;
+    const holds = Array.from(document.querySelectorAll('input[name="holds"]:checked')).map(hold => hold.value);
 
-    const holds = [];
-    document.querySelectorAll('input[name="holds"]:checked').forEach(checkbox => {
-        holds.push(checkbox.value);
-    });
-
+    // Create a climb object
     const climb = {
         level,
         location,
         date,
-        type,
+        wallType,
         holds
     };
 
-    let climbs = localStorage.getItem('climbs');
-    climbs = climbs ? JSON.parse(climbs) : [];
+    // Save the climb to localStorage
+    let climbs = JSON.parse(localStorage.getItem('climbs')) || [];
     climbs.push(climb);
     localStorage.setItem('climbs', JSON.stringify(climbs));
 
-    document.getElementById('message').innerText = 'Climb added successfully!';
-    this.reset();
+    // Clear the form
+    document.getElementById('add-climb-form').reset();
+
+    alert('Climb added successfully!');
 });

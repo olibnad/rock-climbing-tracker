@@ -1,48 +1,87 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
 }
 
+/* Container */
 .container {
-    width: 50%;
-    margin: auto;
-    overflow: hidden;
-    padding: 2rem;
     background: #fff;
+    padding: 20px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 50px;
+    max-width: 400px;
+    width: 100%;
 }
 
-h1 {
+/* Header */
+header {
     text-align: center;
+    margin-bottom: 20px;
 }
 
+/* Navigation */
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+nav button:hover {
+    background: #0056b3;
+}
+
+/* Form styles */
 form {
     display: flex;
     flex-direction: column;
 }
 
-label {
-    margin: 10px 0 5px;
+form label {
+    margin-bottom: 5px;
 }
 
-input, select, button {
-    padding: 10px;
+form input,
+form select {
     margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-button {
-    background: #5cb85c;
-    color: white;
+form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+form button {
+    background: #28a745;
+    color: #fff;
     border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
-button:hover {
-    background: #4cae4c;
+form button:hover {
+    background: #218838;
 }
+
 
 /* Add this to the existing CSS file */
 .climb-entry {

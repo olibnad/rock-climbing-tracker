@@ -1,25 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let climbs = localStorage.getItem('climbs');
-    climbs = climbs ? JSON.parse(climbs) : [];
+    const climbHistory = document.getElementById('climb-history');
+    const climbs = JSON.parse(localStorage.getItem('climbs')) || [];
 
-    const climbHistoryDiv = document.getElementById('climbHistory');
-
-    if (climbs.length > 0) {
+    if (climbs.length === 0) {
+        climbHistory.innerHTML = '<p>No climbs recorded yet.</p>';
+    } else {
         climbs.forEach(climb => {
             const climbDiv = document.createElement('div');
-            climbDiv.classList.add('climb-entry');
+            climbDiv.classList.add('climb');
 
-            climbDiv.innerHTML = `
+            const climbInfo = `
                 <p><strong>Level:</strong> ${climb.level}</p>
                 <p><strong>Location:</strong> ${climb.location}</p>
                 <p><strong>Date:</strong> ${climb.date}</p>
-                <p><strong>Type:</strong> ${climb.type}</p>
+                <p><strong>Type of Wall:</strong> ${climb.wallType}</p>
                 <p><strong>Holds:</strong> ${climb.holds.join(', ')}</p>
             `;
-
-            climbHistoryDiv.appendChild(climbDiv);
+            climbDiv.innerHTML = climbInfo;
+            climbHistory.appendChild(climbDiv);
         });
-    } else {
-        climbHistoryDiv.innerHTML = '<p>No climbs recorded yet.</p>';
     }
 });
