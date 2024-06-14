@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Climbing Tracker</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Climbing Tracker</h1>
+        <form id="climbForm">
+            <label for="level">Level of Climb:</label>
+            <input type="text" id="level" name="level" required>
+
+            <label for="location">Gym Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="type">Type of Wall:</label>
+            <select id="type" name="type" required>
+                <option value="slab">Slab</option>
+                <option value="light-overhang">Light Overhang</option>
+                <option value="deep-overhang">Deep Overhang</option>
+            </select>
+
+            <label>Types of Holds:</label>
+            <div>
+                <input type="checkbox" id="crimps" name="holds" value="crimps">
+                <label for="crimps">Crimps</label>
+            </div>
+            <div>
+                <input type="checkbox" id="jugs" name="holds" value="jugs">
+                <label for="jugs">Jugs</label>
+            </div>
+            <div>
+                <input type="checkbox" id="slopers" name="holds" value="slopers">
+                <label for="slopers">Slopers</label>
+            </div>
+            <!-- Add more holds as needed -->
+
+            <button type="submit">Add Climb</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
