@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const climbInfo = `
                 <p><strong>Level:</strong> ${climb.level}</p>
                 <p><strong>Location:</strong> ${climb.location}</p>
-                <p><strong>Date:</strong> ${climb.date}</p>
+                <p class="climb-date"><strong>Date:</strong> ${climb.date}</p>
                 <p><strong>Type of Wall:</strong> ${climb.wallType}</p>
                 <p><strong>Holds:</strong> ${climb.holds.join(', ')}</p>
             `;

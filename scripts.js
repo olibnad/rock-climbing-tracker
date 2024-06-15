@@ -1,29 +1,33 @@
-document.getElementById('add-climb-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('climb-form');
+    const gymButtons = document.querySelectorAll('.gym-button');
+    const gymLocation = document.getElementById('gym-location');
 
-    // Gather form data
-    const level = document.getElementById('level').value;
-    const location = document.getElementById('location').value;
-    const date = document.getElementById('date').value;
-    const wallType = document.getElementById('wall-type').value;
-    const holds = Array.from(document.querySelectorAll('input[name="holds"]:checked')).map(hold => hold.value);
+    gymButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            gymButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            gymLocation.value = this.innerText;
+        });
+    });
 
-    // Create a climb object
-    const climb = {
-        level,
-        location,
-        date,
-        wallType,
-        holds
-    };
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const level = form.level.value;
+        const location = gymLocation.value;
+        const date = form.date.value;
+        const wallType = form.wallType.value;
+        const holds = Array.from(form.holds)
+                            .filter(checkbox => checkbox.checked)
+                            .map(checkbox => checkbox.value);
 
-    // Save the climb to localStorage
-    let climbs = JSON.parse(localStorage.getItem('climbs')) || [];
-    climbs.push(climb);
-    localStorage.setItem('climbs', JSON.stringify(climbs));
+        const climb = { level, location, date, wallType, holds };
+        let climbs = JSON.parse(localStorage.getItem('climbs')) || [];
+        climbs.push(climb);
+        localStorage.setItem('climbs', JSON.stringify(climbs));
 
-    // Clear the form
-    document.getElementById('add-climb-form').reset();
-
-    alert('Climb added successfully!');
+        form.reset();
+        gymButtons.forEach(btn => btn.classList.remove('active'));
+        alert('Climb added successfully!');
+    });
 });

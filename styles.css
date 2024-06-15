@@ -104,3 +104,28 @@ form button:hover {
     font-size: 0.9em;
     color: #757575;
 }
+
+/* Gym button styles */
+.gym-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.gym-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.gym-button.active {
+    background: #0056b3;
+}
+
+.gym-button:hover {
+    background: #0056b3;
+}

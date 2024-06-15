@@ -14,30 +14,65 @@
         <nav>
             <button onclick="location.href='history.html'">View History</button>
         </nav>
-        <form id="add-climb-form">
-            <!-- Form fields go here -->
+        <form id="climb-form">
             <label for="level">Level of Climb:</label>
-            <input type="text" id="level" name="level" required>
+            <select id="level" name="level">
+                <option value="VB">VB</option>
+                <option value="V0">V0</option>
+                <option value="V1">V1</option>
+                <option value="V2">V2</option>
+                <option value="V3">V3</option>
+                <option value="V4">V4</option>
+                <option value="V5">V5</option>
+                <option value="V6">V6</option>
+                <option value="V7">V7</option>
+                <option value="V8">V8</option>
+                <option value="V9">V9</option>
+                <option value="V10">V10</option>
+                <option value="V11">V11</option>
+                <option value="V12">V12</option>
+                <option value="V13">V13</option>
+                <option value="V14">V14</option>
+                <option value="V15">V15</option>
+                <option value="V16">V16</option>
+            </select>
 
-            <label for="location">Gym Location:</label>
-            <input type="text" id="location" name="location" required>
+            <label>Gym Location:</label>
+            <div class="gym-buttons">
+                <button type="button" id="gym1" class="gym-button">Gym 1</button>
+                <button type="button" id="gym2" class="gym-button">Gym 2</button>
+                <button type="button" id="gym3" class="gym-button">Gym 3</button>
+            </div>
+            <input type="hidden" id="gym-location" name="location">
 
             <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
+            <input type="date" id="date" name="date">
 
             <label for="wall-type">Type of Wall:</label>
-            <select id="wall-type" name="wall-type" required>
+            <select id="wall-type" name="wallType">
                 <option value="slab">Slab</option>
                 <option value="light-overhang">Light Overhang</option>
                 <option value="deep-overhang">Deep Overhang</option>
             </select>
 
-            <label for="holds">Types of Holds:</label>
-            <input type="checkbox" id="hold1" name="holds" value="crimp"> Crimp
-            <input type="checkbox" id="hold2" name="holds" value="jug"> Jug
-            <input type="checkbox" id="hold3" name="holds" value="pinch"> Pinch
-            <input type="checkbox" id="hold4" name="holds" value="sloper"> Sloper
-
+            <label>Types of Holds:</label>
+            <div>
+                <input type="checkbox" id="crimp" name="holds" value="crimp">
+                <label for="crimp">Crimp</label>
+            </div>
+            <div>
+                <input type="checkbox" id="jug" name="holds" value="jug">
+                <label for="jug">Jug</label>
+            </div>
+            <div>
+                <input type="checkbox" id="pinch" name="holds" value="pinch">
+                <label for="pinch">Pinch</label>
+            </div>
+            <div>
+                <input type="checkbox" id="sloper" name="holds" value="sloper">
+                <label for="sloper">Sloper</label>
+            </div>
+            
             <button type="submit">Add Climb</button>
         </form>
     </div>
