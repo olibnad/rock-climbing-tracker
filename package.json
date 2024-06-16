@@ -5,7 +5,8 @@
   "main": "history.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "echo \"Building the project...\" && exit 0"
   },
   "keywords": [],
   "author": "",
